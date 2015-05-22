@@ -6,6 +6,28 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
+	
+    <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(38.2034426, -85.7319173),
+		  
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  
 </head>
 <style>
 
@@ -20,14 +42,30 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <a class="navbar-brand" href="index.html">Home</a>
-		  <a class="navbar-brand" href="about.html">About</a>
-		  <a class="navbar-brand" href="education.html">Education</a>
-		  <a class="navbar-brand" href="projects.html">Projects</a>
-		  <a class="navbar-brand" href="contact.html">Contact</a>
+		  <div id="navbarSpacing">
+			  <a class="navbar-brand" href="index.html">Home</a>
+			  <a class="navbar-brand" href="about.html">About</a>
+			  <a class="navbar-brand" href="education.html">Education</a>
+			  <a class="navbar-brand" href="projects.html">Projects</a>
+			  <a class="navbar-brand" href="contact.html">Contact</a>
 		 </div>
+		</div>
 	</nav>
-	<h3>Contact me here:</h3>
-	<form>
-	</form>
-	<p>Or send me an email at <a href="http://arfrizz@gmail.com"></a></p>
+	
+	<center><img src="UofLcourt.jpg" style=""></center>
+	<div class="container">
+		<hr>
+			<!-- Adding map to contact page -->
+			  
+			  <h3>Contact me here:</h3>
+				<div id="map-canvas"></div>
+			  
+				
+				<p><a href="http://arfrizz@gmail.com">Or send me an email</a></p>
+				
+		<footer>
+			<p>Frizzell</p>
+		</footer>
+	</div>
+</body>
+</html>
